@@ -12,6 +12,10 @@
 		0D584E911F3F268E00FAE26A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E8F1F3F268E00FAE26A /* Main.storyboard */; };
 		0D584E931F3F268E00FAE26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E921F3F268E00FAE26A /* Assets.xcassets */; };
 		0D584E961F3F268E00FAE26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E941F3F268E00FAE26A /* LaunchScreen.storyboard */; };
+		0D584E9F1F3F27F200FAE26A /* LARefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */; };
+		0D9FAAAF1F4144460086C736 /* LARefreshConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */; };
+		0D9FAAB11F4145AB0086C736 /* LARefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */; };
+		0D9FAAB31F417A170086C736 /* LARefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		0D584E921F3F268E00FAE26A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D584E951F3F268E00FAE26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D584E971F3F268E00FAE26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshComponent.swift; sourceTree = "<group>"; };
+		0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshConstant.swift; sourceTree = "<group>"; };
+		0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshExtension.swift; sourceTree = "<group>"; };
+		0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +62,24 @@
 		0D584E8A1F3F268E00FAE26A /* LARefresh */ = {
 			isa = PBXGroup;
 			children = (
+				0D584E9D1F3F271200FAE26A /* LARefresh */,
 				0D584E8B1F3F268E00FAE26A /* AppDelegate.swift */,
 				0D584E8D1F3F268E00FAE26A /* ViewController.swift */,
 				0D584E8F1F3F268E00FAE26A /* Main.storyboard */,
 				0D584E921F3F268E00FAE26A /* Assets.xcassets */,
 				0D584E941F3F268E00FAE26A /* LaunchScreen.storyboard */,
 				0D584E971F3F268E00FAE26A /* Info.plist */,
+			);
+			path = LARefresh;
+			sourceTree = "<group>";
+		};
+		0D584E9D1F3F271200FAE26A /* LARefresh */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */,
+				0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */,
+				0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */,
+				0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */,
 			);
 			path = LARefresh;
 			sourceTree = "<group>";
@@ -136,7 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9FAAB11F4145AB0086C736 /* LARefreshExtension.swift in Sources */,
+				0D9FAAAF1F4144460086C736 /* LARefreshConstant.swift in Sources */,
 				0D584E8E1F3F268E00FAE26A /* ViewController.swift in Sources */,
+				0D9FAAB31F417A170086C736 /* LARefreshHeader.swift in Sources */,
+				0D584E9F1F3F27F200FAE26A /* LARefreshComponent.swift in Sources */,
 				0D584E8C1F3F268E00FAE26A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +323,7 @@
 				0D584E9C1F3F268E00FAE26A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
