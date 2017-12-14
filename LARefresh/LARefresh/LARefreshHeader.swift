@@ -51,7 +51,15 @@ class LARefreshHeader: LARefreshComponent {
                     self.pullingPercent = 0
                 })
             } else if newValue == .refreshing {
-                
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: LARefreshAnimationDuration, animations: { 
+                        let top = self.originalInset.top + self.la_height
+                        self.superScrollView?.la_inset_top = top
+                        self.superScrollView?.contentOffset.y = -top
+                    }, completion: { (_) in
+                        self.executeRefreshHandler()
+                    })
+                }
             }
         }
     }

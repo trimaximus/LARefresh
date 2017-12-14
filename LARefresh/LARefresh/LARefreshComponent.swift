@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectiveC.runtime
 
 enum LARefreshState {
     case idle
@@ -18,9 +19,7 @@ enum LARefreshState {
 
 class LARefreshComponent: UIView {
     /// 父视图
-    var superScrollView: UIScrollView? {
-        return self.superview as? UIScrollView
-    }
+    var superScrollView: UIScrollView?
     /// 父视图初始contentInset
     var originalInset = UIEdgeInsets.zero
     /// 划动手势
@@ -30,7 +29,7 @@ class LARefreshComponent: UIView {
     /// 开始刷新后回调
     var beginRefreshHandler: (() -> Void)?
     /// 回调对象
-    var refreshTarget: AnyObject?
+    weak var refreshTarget: AnyObject?
     /// 回调方法
     var refreshingAction: Selector?
     /// 是否正在刷新
@@ -88,7 +87,8 @@ class LARefreshComponent: UIView {
         self.removeObservers()
         self.la_x = 0
         self.la_width = scrollView.la_width
-        scrollView.alwaysBounceVertical = true
+        self.superScrollView = scrollView
+        self.superScrollView?.alwaysBounceVertical = true
         self.originalInset = scrollView.contentInset
         self.addObservers()
     }
@@ -96,11 +96,13 @@ class LARefreshComponent: UIView {
     
     /// 子类调用回调方法
     func executeRefreshHandler() {
-        self.refresingHandler?()
-        if self.refreshTarget != nil && self.refreshingAction != nil && self.refreshTarget!.responds(to: self.refreshingAction!) {
-            self.refreshTarget?.perform(self.refreshingAction!, with: nil, afterDelay: 0)
+        DispatchQueue.main.async {
+            self.refresingHandler?()
+            if self.refreshTarget != nil && self.refreshingAction != nil && self.refreshTarget!.responds(to: self.refreshingAction!) {
+                self.refreshTarget?.perform(self.refreshingAction!, with: nil, afterDelay: 0)
+            }
+            self.beginRefreshHandler?()
         }
-        self.beginRefreshHandler?()
     }
     
     
@@ -174,15 +176,14 @@ class LARefreshComponent: UIView {
             self.scrollViewPanGestureRecognizerStateChange(change: change)
         }
     }
-}
-
-// MARK: - 子类继承方法
-extension LARefreshComponent {
+    
     /// 初始化
     func prepare() {
         self.backgroundColor = UIColor.clear
         self.autoresizingMask = .flexibleWidth
     }
+    
+    // MARK: - 子类继承方法
     
     /// 设置子控件frame
     func placeSubviews() {}
@@ -201,4 +202,5 @@ extension LARefreshComponent {
     ///
     /// - Parameter change: panGestureRecognizer.state
     func scrollViewPanGestureRecognizerStateChange(change: [NSKeyValueChangeKey: Any]?) {}
+    
 }

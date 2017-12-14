@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ObjectiveC.runtime
 
 extension UIView {
+    
+    
     var la_x: CGFloat {
         get {
             return self.frame.origin.x
@@ -47,7 +50,27 @@ extension UIView {
     
 }
 
-extension UIScrollView {
+fileprivate var LARefreshHeaderKey: Character = "\0"
+fileprivate var LARefreshFooterKey: Character = "\0"
+@objc extension UIScrollView {
+    var la_header: LARefreshHeader? {
+        get {
+            return objc_getAssociatedObject(self, &LARefreshHeaderKey) as? LARefreshHeader
+        }
+        set {
+            if self.la_header != newValue {
+                self.la_header?.removeFromSuperview()
+                if let newHeader = newValue {
+                    self.insertSubview(newHeader, at: 0)
+                }
+                self.willChangeValue(forKey: "la_header")
+                objc_setAssociatedObject(self, &LARefreshHeaderKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
+                self.didChangeValue(forKey: "la_header")
+            }
+        }
+    }
+    
+    
     var la_inset_top: CGFloat {
         get {
             return self.contentInset.top
