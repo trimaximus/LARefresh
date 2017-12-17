@@ -8,6 +8,7 @@
 
 import UIKit
 let LARefreshHeaderHeight: CGFloat = 54
+let LARefreshFooterHeight: CGFloat = 44
 let LARefreshAnimationDuration: TimeInterval = 0.3
 
 /// KVO

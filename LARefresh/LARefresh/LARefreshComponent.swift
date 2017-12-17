@@ -59,7 +59,6 @@ class LARefreshComponent: UIView {
         }
     }
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.prepare()

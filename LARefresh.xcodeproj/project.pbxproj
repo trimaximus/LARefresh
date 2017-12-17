@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1D7BF61FE2BFD600422E51 /* LARefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D7BF51FE2BFD600422E51 /* LARefreshFooter.swift */; };
 		0D584E8C1F3F268E00FAE26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D584E8B1F3F268E00FAE26A /* AppDelegate.swift */; };
 		0D584E8E1F3F268E00FAE26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D584E8D1F3F268E00FAE26A /* ViewController.swift */; };
 		0D584E911F3F268E00FAE26A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E8F1F3F268E00FAE26A /* Main.storyboard */; };
@@ -16,9 +17,12 @@
 		0D9FAAAF1F4144460086C736 /* LARefreshConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */; };
 		0D9FAAB11F4145AB0086C736 /* LARefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */; };
 		0D9FAAB31F417A170086C736 /* LARefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */; };
+		0DC14BCF1FE6930900C2D5C7 /* LARefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC14BCE1FE6930900C2D5C7 /* LARefreshAutoFooter.swift */; };
+		0DC14BD11FE6932700C2D5C7 /* LARefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC14BD01FE6932700C2D5C7 /* LARefreshBackFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1D7BF51FE2BFD600422E51 /* LARefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshFooter.swift; sourceTree = "<group>"; };
 		0D584E881F3F268E00FAE26A /* LARefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LARefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D584E8B1F3F268E00FAE26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D584E8D1F3F268E00FAE26A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshConstant.swift; sourceTree = "<group>"; };
 		0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshExtension.swift; sourceTree = "<group>"; };
 		0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshHeader.swift; sourceTree = "<group>"; };
+		0DC14BCE1FE6930900C2D5C7 /* LARefreshAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshAutoFooter.swift; sourceTree = "<group>"; };
+		0DC14BD01FE6932700C2D5C7 /* LARefreshBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshBackFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */,
 				0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */,
 				0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */,
+				0D1D7BF51FE2BFD600422E51 /* LARefreshFooter.swift */,
+				0DC14BCE1FE6930900C2D5C7 /* LARefreshAutoFooter.swift */,
+				0DC14BD01FE6932700C2D5C7 /* LARefreshBackFooter.swift */,
 			);
 			path = LARefresh;
 			sourceTree = "<group>";
@@ -157,7 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC14BCF1FE6930900C2D5C7 /* LARefreshAutoFooter.swift in Sources */,
 				0D9FAAB11F4145AB0086C736 /* LARefreshExtension.swift in Sources */,
+				0DC14BD11FE6932700C2D5C7 /* LARefreshBackFooter.swift in Sources */,
+				0D1D7BF61FE2BFD600422E51 /* LARefreshFooter.swift in Sources */,
 				0D9FAAAF1F4144460086C736 /* LARefreshConstant.swift in Sources */,
 				0D584E8E1F3F268E00FAE26A /* ViewController.swift in Sources */,
 				0D9FAAB31F417A170086C736 /* LARefreshHeader.swift in Sources */,

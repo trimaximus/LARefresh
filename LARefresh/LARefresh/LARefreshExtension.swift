@@ -10,8 +10,6 @@ import UIKit
 import ObjectiveC.runtime
 
 extension UIView {
-    
-    
     var la_x: CGFloat {
         get {
             return self.frame.origin.x
@@ -52,7 +50,10 @@ extension UIView {
 
 fileprivate var LARefreshHeaderKey: Character = "\0"
 fileprivate var LARefreshFooterKey: Character = "\0"
+fileprivate var LARefreshReloadDataClosureKey: Character = "\0"
 @objc extension UIScrollView {
+    
+    /// 刷新Header
     var la_header: LARefreshHeader? {
         get {
             return objc_getAssociatedObject(self, &LARefreshHeaderKey) as? LARefreshHeader
@@ -70,40 +71,116 @@ fileprivate var LARefreshFooterKey: Character = "\0"
         }
     }
     
+    /// 加载Footer
+    var la_footer: LARefreshFooter? {
+        get {
+            return objc_getAssociatedObject(self, &LARefreshFooterKey) as? LARefreshFooter
+        }
+        set {
+            if self.la_footer != newValue {
+                self.la_footer?.removeFromSuperview()
+                if let newFooter = newValue {
+                    self.insertSubview(newFooter, at: 0)
+                }
+                self.willChangeValue(forKey: "la_footer")
+                objc_setAssociatedObject(self, &LARefreshFooterKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
+                self.didChangeValue(forKey: "la_footer")
+            }
+        }
+    }
+    
+    var la_reloadDataClosure: ((_ totalDataCount: Int) -> Void)? {
+        get {
+            return objc_getAssociatedObject(self, &LARefreshReloadDataClosureKey) as? ((Int) -> Void)
+        }
+        set {
+            self.willChangeValue(forKey: "la_reloadDataClosure")
+            objc_setAssociatedObject(self, &LARefreshReloadDataClosureKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            self.didChangeValue(forKey: "la_reloadDataClosure")
+        }
+    }
+    
+    var la_totalDataCount: Int {
+        get {
+            var totalDataCount = 0;
+            if self.isKind(of: UITableView.classForCoder()) {
+                let tableView = self as! UITableView
+                for section in 0..<tableView.numberOfSections {
+                    totalDataCount += tableView.numberOfRows(inSection: section)
+                }
+            } else if self.isKind(of: UICollectionView.classForCoder()) {
+                let collectionView = self as! UICollectionView
+                for section in 0..<collectionView.numberOfSections {
+                    totalDataCount += collectionView.numberOfItems(inSection: section)
+                }
+            }
+            
+            return totalDataCount;
+        }
+    }
+    
+    var la_inset: UIEdgeInsets {
+        get {
+            if #available(iOS 11.0, *) {
+                return self.adjustedContentInset
+            }
+            return self.contentInset
+        }
+    }
     
     var la_inset_top: CGFloat {
         get {
-            return self.contentInset.top
+            return self.la_inset.top
         }
         set {
-            self.contentInset.top = newValue
+            var inset = self.contentInset
+            inset.top = newValue
+            if #available(iOS 11.0, *) {
+                inset.top -= (self.adjustedContentInset.top - self.contentInset.top)
+            }
+            self.contentInset = inset
         }
     }
     
     var la_inset_right: CGFloat {
         get {
-            return self.contentInset.right
+            return self.la_inset.right
         }
         set {
-            self.contentInset.right = newValue
+            var inset = self.contentInset
+            inset.right = newValue
+            if #available(iOS 11.0, *) {
+                inset.right -= (self.adjustedContentInset.right - self.contentInset.right)
+            }
+            self.contentInset = inset
         }
     }
     
     var la_inset_bottom: CGFloat {
         get {
-            return self.contentInset.bottom
+            return self.la_inset.bottom
         }
         set {
-            self.contentInset.bottom = newValue
+            var inset = self.contentInset
+            inset.bottom = newValue
+            if #available(iOS 11.0, *) {
+                inset.bottom -= (self.adjustedContentInset.bottom - self.contentInset.bottom)
+            }
+            self.contentInset = inset
         }
     }
     
     var la_inset_left: CGFloat {
         get {
-            return self.contentInset.left
+            return self.la_inset.left
         }
         set {
-            self.contentInset.left = newValue
+            var inset = self.contentInset
+            inset.left = newValue
+            if #available(iOS 11.0, *) {
+                inset.left -= (self.adjustedContentInset.left - self.contentInset.left)
+            }
+            self.contentInset = inset
         }
     }
     
