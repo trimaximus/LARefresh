@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         self.myTableView.la_header = LARefreshHeader(refreshTarget: self, refreshingAction: #selector(testRefresh))
-        self.myTableView.la_footer = LARefreshFooter(refreshTarget: self, refreshingAction: #selector(textLoadMore))
+        self.myTableView.la_footer = LARefreshAutoFooter(refreshTarget: self, refreshingAction: #selector(testLoadMore))
     }
 
     @objc func testRefresh() {
@@ -27,11 +27,11 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func textLoadMore() {
+    @objc func testLoadMore() {
         print("加载更多")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             print("停止加载")
-            self.myTableView.la_footer?.endRefreshing()
+            self.myTableView.la_footer?.endRefreshingWithNoMoreData()
         }
         
     }
@@ -40,7 +40,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
-
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "identifier")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "identifier")
+        }
+        cell?.textLabel?.text = "\(indexPath.row + 1)"
+        return cell!
+    }
 }
 
