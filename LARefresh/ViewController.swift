@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         self.myTableView.la_header = LARefreshHeader(refreshTarget: self, refreshingAction: #selector(testRefresh))
-        self.myTableView.la_footer = LARefreshAutoFooter(refreshTarget: self, refreshingAction: #selector(testLoadMore))
+        self.myTableView.la_footer = LARefreshBackFooter(refreshTarget: self, refreshingAction: #selector(testLoadMore))
     }
 
     @objc func testRefresh() {
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         print("加载更多")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             print("停止加载")
-            self.myTableView.la_footer?.endRefreshingWithNoMoreData()
+            self.myTableView.la_footer?.endRefreshing()
         }
         
     }
