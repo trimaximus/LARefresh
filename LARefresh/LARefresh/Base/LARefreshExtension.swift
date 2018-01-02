@@ -229,3 +229,15 @@ fileprivate var LARefreshReloadDataClosureKey: Character = "\0"
         }
     }
 }
+
+extension UILabel {
+    class func initializeLARefreshLabel() -> UILabel {
+        let refreshLabel = UILabel()
+        refreshLabel.font = LARefreshLabelFont
+        refreshLabel.textColor = LARefreshLabelTextColor
+        refreshLabel.textAlignment = .center
+        refreshLabel.autoresizingMask = .flexibleWidth
+        refreshLabel.backgroundColor = UIColor.clear
+        return refreshLabel
+    }
+}

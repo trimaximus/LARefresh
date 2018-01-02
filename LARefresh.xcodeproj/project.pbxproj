@@ -7,22 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D1D7BF61FE2BFD600422E51 /* LARefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D7BF51FE2BFD600422E51 /* LARefreshFooter.swift */; };
 		0D584E8C1F3F268E00FAE26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D584E8B1F3F268E00FAE26A /* AppDelegate.swift */; };
 		0D584E8E1F3F268E00FAE26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D584E8D1F3F268E00FAE26A /* ViewController.swift */; };
 		0D584E911F3F268E00FAE26A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E8F1F3F268E00FAE26A /* Main.storyboard */; };
 		0D584E931F3F268E00FAE26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E921F3F268E00FAE26A /* Assets.xcassets */; };
 		0D584E961F3F268E00FAE26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D584E941F3F268E00FAE26A /* LaunchScreen.storyboard */; };
-		0D584E9F1F3F27F200FAE26A /* LARefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */; };
-		0D9FAAAF1F4144460086C736 /* LARefreshConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */; };
-		0D9FAAB11F4145AB0086C736 /* LARefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */; };
-		0D9FAAB31F417A170086C736 /* LARefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */; };
-		0DC14BCF1FE6930900C2D5C7 /* LARefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC14BCE1FE6930900C2D5C7 /* LARefreshAutoFooter.swift */; };
-		0DC14BD11FE6932700C2D5C7 /* LARefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC14BD01FE6932700C2D5C7 /* LARefreshBackFooter.swift */; };
+		0D70D02D1FFBAE2D00C1D83F /* LARefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D70D02C1FFBAE2D00C1D83F /* LARefresh.bundle */; };
+		0D70D0371FFBAEAD00C1D83F /* LARefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0301FFBAEAD00C1D83F /* LARefreshAutoFooter.swift */; };
+		0D70D0381FFBAEAD00C1D83F /* LARefreshConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0311FFBAEAD00C1D83F /* LARefreshConstant.swift */; };
+		0D70D0391FFBAEAD00C1D83F /* LARefreshExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0321FFBAEAD00C1D83F /* LARefreshExtension.swift */; };
+		0D70D03A1FFBAEAD00C1D83F /* LARefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0331FFBAEAD00C1D83F /* LARefreshBackFooter.swift */; };
+		0D70D03B1FFBAEAD00C1D83F /* LARefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0341FFBAEAD00C1D83F /* LARefreshFooter.swift */; };
+		0D70D03C1FFBAEAD00C1D83F /* LARefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0351FFBAEAD00C1D83F /* LARefreshHeader.swift */; };
+		0D70D03D1FFBAEAD00C1D83F /* LARefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0361FFBAEAD00C1D83F /* LARefreshComponent.swift */; };
+		0D70D0421FFBAF3800C1D83F /* LARefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0411FFBAF3800C1D83F /* LARefreshStateHeader.swift */; };
+		0D70D0441FFBAF6600C1D83F /* LARefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0431FFBAF6600C1D83F /* LARefreshNormalHeader.swift */; };
+		0D70D0461FFBAF8100C1D83F /* LARefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0451FFBAF8100C1D83F /* LARefreshGifHeader.swift */; };
+		0D70D0481FFBB98C00C1D83F /* LARefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0471FFBB98C00C1D83F /* LARefreshAutoStateFooter.swift */; };
+		0D70D04A1FFBB9AF00C1D83F /* LARefreshBackStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0491FFBB9AF00C1D83F /* LARefreshBackStateFooter.swift */; };
+		0D70D04C1FFBB9C200C1D83F /* LARefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D04B1FFBB9C200C1D83F /* LARefreshBackNormalFooter.swift */; };
+		0D70D0501FFBB9ED00C1D83F /* LARefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D04F1FFBB9ED00C1D83F /* LARefreshBackGifFooter.swift */; };
+		0D70D0521FFBBA0100C1D83F /* LARefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0511FFBBA0100C1D83F /* LARefreshAutoNormalFooter.swift */; };
+		0D70D0541FFBBA0F00C1D83F /* LARefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70D0531FFBBA0F00C1D83F /* LARefreshAutoGifFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D1D7BF51FE2BFD600422E51 /* LARefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshFooter.swift; sourceTree = "<group>"; };
 		0D584E881F3F268E00FAE26A /* LARefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LARefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D584E8B1F3F268E00FAE26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D584E8D1F3F268E00FAE26A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,12 +39,23 @@
 		0D584E921F3F268E00FAE26A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D584E951F3F268E00FAE26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D584E971F3F268E00FAE26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshComponent.swift; sourceTree = "<group>"; };
-		0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshConstant.swift; sourceTree = "<group>"; };
-		0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshExtension.swift; sourceTree = "<group>"; };
-		0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshHeader.swift; sourceTree = "<group>"; };
-		0DC14BCE1FE6930900C2D5C7 /* LARefreshAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshAutoFooter.swift; sourceTree = "<group>"; };
-		0DC14BD01FE6932700C2D5C7 /* LARefreshBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshBackFooter.swift; sourceTree = "<group>"; };
+		0D70D02C1FFBAE2D00C1D83F /* LARefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LARefresh.bundle; sourceTree = "<group>"; };
+		0D70D0301FFBAEAD00C1D83F /* LARefreshAutoFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshAutoFooter.swift; sourceTree = "<group>"; };
+		0D70D0311FFBAEAD00C1D83F /* LARefreshConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshConstant.swift; sourceTree = "<group>"; };
+		0D70D0321FFBAEAD00C1D83F /* LARefreshExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshExtension.swift; sourceTree = "<group>"; };
+		0D70D0331FFBAEAD00C1D83F /* LARefreshBackFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshBackFooter.swift; sourceTree = "<group>"; };
+		0D70D0341FFBAEAD00C1D83F /* LARefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshFooter.swift; sourceTree = "<group>"; };
+		0D70D0351FFBAEAD00C1D83F /* LARefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshHeader.swift; sourceTree = "<group>"; };
+		0D70D0361FFBAEAD00C1D83F /* LARefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshComponent.swift; sourceTree = "<group>"; };
+		0D70D0411FFBAF3800C1D83F /* LARefreshStateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshStateHeader.swift; sourceTree = "<group>"; };
+		0D70D0431FFBAF6600C1D83F /* LARefreshNormalHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshNormalHeader.swift; sourceTree = "<group>"; };
+		0D70D0451FFBAF8100C1D83F /* LARefreshGifHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshGifHeader.swift; sourceTree = "<group>"; };
+		0D70D0471FFBB98C00C1D83F /* LARefreshAutoStateFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshAutoStateFooter.swift; sourceTree = "<group>"; };
+		0D70D0491FFBB9AF00C1D83F /* LARefreshBackStateFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshBackStateFooter.swift; sourceTree = "<group>"; };
+		0D70D04B1FFBB9C200C1D83F /* LARefreshBackNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshBackNormalFooter.swift; sourceTree = "<group>"; };
+		0D70D04F1FFBB9ED00C1D83F /* LARefreshBackGifFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LARefreshBackGifFooter.swift; sourceTree = "<group>"; };
+		0D70D0511FFBBA0100C1D83F /* LARefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
+		0D70D0531FFBBA0F00C1D83F /* LARefreshAutoGifFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshAutoGifFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,15 +102,65 @@
 		0D584E9D1F3F271200FAE26A /* LARefresh */ = {
 			isa = PBXGroup;
 			children = (
-				0D9FAAAE1F4144460086C736 /* LARefreshConstant.swift */,
-				0D9FAAB01F4145AB0086C736 /* LARefreshExtension.swift */,
-				0D584E9E1F3F27F200FAE26A /* LARefreshComponent.swift */,
-				0D9FAAB21F417A170086C736 /* LARefreshHeader.swift */,
-				0D1D7BF51FE2BFD600422E51 /* LARefreshFooter.swift */,
-				0DC14BCE1FE6930900C2D5C7 /* LARefreshAutoFooter.swift */,
-				0DC14BD01FE6932700C2D5C7 /* LARefreshBackFooter.swift */,
+				0D70D02F1FFBAE9A00C1D83F /* Base */,
+				0D70D02E1FFBAE9A00C1D83F /* Custom */,
+				0D70D02C1FFBAE2D00C1D83F /* LARefresh.bundle */,
 			);
 			path = LARefresh;
+			sourceTree = "<group>";
+		};
+		0D70D02E1FFBAE9A00C1D83F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				0D70D03F1FFBAF1900C1D83F /* AutoFooter */,
+				0D70D0401FFBAF1900C1D83F /* BackFooter */,
+				0D70D03E1FFBAF1900C1D83F /* Header */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		0D70D02F1FFBAE9A00C1D83F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0D70D0301FFBAEAD00C1D83F /* LARefreshAutoFooter.swift */,
+				0D70D0331FFBAEAD00C1D83F /* LARefreshBackFooter.swift */,
+				0D70D0361FFBAEAD00C1D83F /* LARefreshComponent.swift */,
+				0D70D0311FFBAEAD00C1D83F /* LARefreshConstant.swift */,
+				0D70D0321FFBAEAD00C1D83F /* LARefreshExtension.swift */,
+				0D70D0341FFBAEAD00C1D83F /* LARefreshFooter.swift */,
+				0D70D0351FFBAEAD00C1D83F /* LARefreshHeader.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0D70D03E1FFBAF1900C1D83F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				0D70D0411FFBAF3800C1D83F /* LARefreshStateHeader.swift */,
+				0D70D0431FFBAF6600C1D83F /* LARefreshNormalHeader.swift */,
+				0D70D0451FFBAF8100C1D83F /* LARefreshGifHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		0D70D03F1FFBAF1900C1D83F /* AutoFooter */ = {
+			isa = PBXGroup;
+			children = (
+				0D70D0471FFBB98C00C1D83F /* LARefreshAutoStateFooter.swift */,
+				0D70D0511FFBBA0100C1D83F /* LARefreshAutoNormalFooter.swift */,
+				0D70D0531FFBBA0F00C1D83F /* LARefreshAutoGifFooter.swift */,
+			);
+			path = AutoFooter;
+			sourceTree = "<group>";
+		};
+		0D70D0401FFBAF1900C1D83F /* BackFooter */ = {
+			isa = PBXGroup;
+			children = (
+				0D70D0491FFBB9AF00C1D83F /* LARefreshBackStateFooter.swift */,
+				0D70D04B1FFBB9C200C1D83F /* LARefreshBackNormalFooter.swift */,
+				0D70D04F1FFBB9ED00C1D83F /* LARefreshBackGifFooter.swift */,
+			);
+			path = BackFooter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D70D02D1FFBAE2D00C1D83F /* LARefresh.bundle in Resources */,
 				0D584E961F3F268E00FAE26A /* LaunchScreen.storyboard in Resources */,
 				0D584E931F3F268E00FAE26A /* Assets.xcassets in Resources */,
 				0D584E911F3F268E00FAE26A /* Main.storyboard in Resources */,
@@ -166,15 +237,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DC14BCF1FE6930900C2D5C7 /* LARefreshAutoFooter.swift in Sources */,
-				0D9FAAB11F4145AB0086C736 /* LARefreshExtension.swift in Sources */,
-				0DC14BD11FE6932700C2D5C7 /* LARefreshBackFooter.swift in Sources */,
-				0D1D7BF61FE2BFD600422E51 /* LARefreshFooter.swift in Sources */,
-				0D9FAAAF1F4144460086C736 /* LARefreshConstant.swift in Sources */,
+				0D70D03C1FFBAEAD00C1D83F /* LARefreshHeader.swift in Sources */,
+				0D70D03A1FFBAEAD00C1D83F /* LARefreshBackFooter.swift in Sources */,
+				0D70D0481FFBB98C00C1D83F /* LARefreshAutoStateFooter.swift in Sources */,
+				0D70D0501FFBB9ED00C1D83F /* LARefreshBackGifFooter.swift in Sources */,
+				0D70D0461FFBAF8100C1D83F /* LARefreshGifHeader.swift in Sources */,
+				0D70D03D1FFBAEAD00C1D83F /* LARefreshComponent.swift in Sources */,
+				0D70D03B1FFBAEAD00C1D83F /* LARefreshFooter.swift in Sources */,
+				0D70D0391FFBAEAD00C1D83F /* LARefreshExtension.swift in Sources */,
+				0D70D0521FFBBA0100C1D83F /* LARefreshAutoNormalFooter.swift in Sources */,
 				0D584E8E1F3F268E00FAE26A /* ViewController.swift in Sources */,
-				0D9FAAB31F417A170086C736 /* LARefreshHeader.swift in Sources */,
-				0D584E9F1F3F27F200FAE26A /* LARefreshComponent.swift in Sources */,
+				0D70D04A1FFBB9AF00C1D83F /* LARefreshBackStateFooter.swift in Sources */,
+				0D70D0541FFBBA0F00C1D83F /* LARefreshAutoGifFooter.swift in Sources */,
+				0D70D04C1FFBB9C200C1D83F /* LARefreshBackNormalFooter.swift in Sources */,
+				0D70D0441FFBAF6600C1D83F /* LARefreshNormalHeader.swift in Sources */,
+				0D70D0381FFBAEAD00C1D83F /* LARefreshConstant.swift in Sources */,
+				0D70D0371FFBAEAD00C1D83F /* LARefreshAutoFooter.swift in Sources */,
 				0D584E8C1F3F268E00FAE26A /* AppDelegate.swift in Sources */,
+				0D70D0421FFBAF3800C1D83F /* LARefreshStateHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
