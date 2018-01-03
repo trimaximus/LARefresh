@@ -15,13 +15,14 @@ class LARefreshHeader: LARefreshComponent {
 
     private static let userDefaults = UserDefaults(suiteName: LARefreshSuiteName)
     
+    var latestUpdateTimeKey = kLatestRefreshTime
     var latestRefreshTime: Date {
         get {
-            guard let value = LARefreshHeader.userDefaults?.object(forKey: kLatestRefreshTime) as? Date else { return Date.distantPast }
+            guard let value = LARefreshHeader.userDefaults?.object(forKey: self.latestUpdateTimeKey) as? Date else { return Date.distantPast }
             return value
         }
         set {
-            LARefreshHeader.userDefaults?.set(newValue, forKey: kLatestRefreshTime)
+            LARefreshHeader.userDefaults?.set(newValue, forKey: self.latestUpdateTimeKey)
         }
     }
     

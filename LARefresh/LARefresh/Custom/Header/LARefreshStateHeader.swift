@@ -26,13 +26,6 @@ class LARefreshStateHeader: LARefreshHeader {
     
     lazy var stateTitles = Dictionary<LARefreshState, String>()
     
-    override func prepare() {
-        super.prepare()
-    }
-    
-    override func placeSubviews() {
-        super.placeSubviews()
-    }
     
     
     func setTitle(_ title: String?, for state: LARefreshState) {
