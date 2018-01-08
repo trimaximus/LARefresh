@@ -35,12 +35,11 @@ class LARefreshNormalHeader: LARefreshStateHeader {
         }
         set {
             let oldValue = super.state
-            if newValue == oldValue { return }
             super.state = newValue
             if state == .idle {
                 if oldValue == .refreshing {
                     self.arrowImageView.transform = CGAffineTransform.identity
-                    UIView.animate(withDuration: LARefreshAnimationDuration, animations: {
+                    UIView.animate(withDuration: LARefreshAnimationDuration.slow.rawValue, animations: {
                         self.activityIndicatorView.alpha = 0
                     }, completion: { (finished) in
                         if self.state != .idle {
@@ -53,14 +52,14 @@ class LARefreshNormalHeader: LARefreshStateHeader {
                 } else {
                     self.activityIndicatorView.stopAnimating()
                     self.arrowImageView.isHidden = false
-                    UIView.animate(withDuration: LARefreshAnimationDuration, animations: {
+                    UIView.animate(withDuration: LARefreshAnimationDuration.fast.rawValue, animations: {
                         self.arrowImageView.transform = CGAffineTransform.identity
                     })
                 }
             } else if state == .pulling {
                 self.activityIndicatorView.stopAnimating()
                 self.arrowImageView.isHidden = false
-                UIView.animate(withDuration: LARefreshAnimationDuration, animations: {
+                UIView.animate(withDuration: LARefreshAnimationDuration.fast.rawValue, animations: {
                     self.arrowImageView.transform = CGAffineTransform(rotationAngle: 0.000001 - CGFloat.pi)
                 })
             } else if state == .refreshing {

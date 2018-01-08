@@ -25,16 +25,13 @@ class LARefreshBackFooter: LARefreshFooter {
             return super.state
         }
         set {
-            let currentState = self.state
-            if currentState == newValue {
-                return
-            }
+            let oldValue = super.state
             super.state = newValue
             guard let currentSuperView = self.superScrollView else { return }
             if newValue == .noMoreData || newValue == .idle {
-                if currentState == .refreshing {
+                if oldValue == .refreshing {
                     // 刷新完毕
-                    UIView.animate(withDuration: LARefreshAnimationDuration, animations: {
+                    UIView.animate(withDuration: LARefreshAnimationDuration.slow.rawValue, animations: {
                         currentSuperView.la_inset_bottom -= self.latestBottomDelta
                         if self.changeAlphaAutomatically {
                             self.alpha = 0
@@ -44,13 +41,13 @@ class LARefreshBackFooter: LARefreshFooter {
                     })
                 }
                 let deltaHeight = self.contentBreakViewHeight
-                if deltaHeight > 0 && currentState == .refreshing && currentSuperView.la_totalDataCount != self.latestRefreshDataCount {
+                if deltaHeight > 0 && oldValue == .refreshing && currentSuperView.la_totalDataCount != self.latestRefreshDataCount {
                     
                 }
             } else if newValue == .refreshing {
                 // 开始刷新
                 self.latestRefreshDataCount = currentSuperView.la_totalDataCount
-                UIView.animate(withDuration: LARefreshAnimationDuration, animations: {
+                UIView.animate(withDuration: LARefreshAnimationDuration.fast.rawValue, animations: {
                     var bottom = self.la_height + self.originalInset.bottom
                     let deltaHeight = self.contentBreakViewHeight
                     if deltaHeight < 0 {

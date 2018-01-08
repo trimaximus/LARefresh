@@ -110,7 +110,7 @@ class LARefreshComponent: UIView {
     /// - Parameter completionHandler: 刷新开始后回调
     func beginRefreshing(completionHandler: (() -> Swift.Void)? = nil) {
         completionHandler?()
-        UIView.animate(withDuration: LARefreshAnimationDuration, animations: {
+        UIView.animate(withDuration: LARefreshAnimationDuration.fast.rawValue, animations: {
             self.alpha = 1
         })
         self.pullingPercent = 1

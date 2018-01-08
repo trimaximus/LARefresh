@@ -10,7 +10,11 @@ import UIKit
 
 let LARefreshHeaderHeight: CGFloat = 54
 let LARefreshFooterHeight: CGFloat = 44
-let LARefreshAnimationDuration: TimeInterval = 0.3
+enum LARefreshAnimationDuration: TimeInterval {
+    case fast = 0.25
+    case slow = 0.4
+}
+
 
 /// KVO
 let LARefreshKeyPathContentOffset = "contentOffset"
@@ -24,4 +28,3 @@ let LARefreshLabelLeftInset: CGFloat = 25
 let LARefreshHeaderIdleText = "下拉可以刷新"
 let LARefreshHeaderPullingText = "松开立即刷新"
 let LARefreshHeaderRefreshingText = "正在刷新数据中..."
-

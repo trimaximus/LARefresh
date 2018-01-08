@@ -43,7 +43,7 @@ class LARefreshHeader: LARefreshComponent {
                 if oldValue != .refreshing { return }
                 LARefreshHeader.userDefaults?.set(Date(), forKey: kLatestRefreshTime)
                 LARefreshHeader.userDefaults?.synchronize()
-                UIView.animate(withDuration: LARefreshAnimationDuration, animations: { 
+                UIView.animate(withDuration: LARefreshAnimationDuration.slow.rawValue, animations: {
                     self.superScrollView?.la_inset_top += self.insetTopDelta
                     if self.changeAlphaAutomatically {
                         self.alpha = 0
@@ -53,7 +53,7 @@ class LARefreshHeader: LARefreshComponent {
                 })
             } else if newValue == .refreshing {
                 DispatchQueue.main.async {
-                    UIView.animate(withDuration: LARefreshAnimationDuration, animations: { 
+                    UIView.animate(withDuration: LARefreshAnimationDuration.fast.rawValue, animations: { 
                         let top = self.originalInset.top + self.la_height
                         self.superScrollView?.la_inset_top = top
                         self.superScrollView?.contentOffset.y = -top

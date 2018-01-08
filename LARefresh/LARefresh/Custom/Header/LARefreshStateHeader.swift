@@ -31,8 +31,6 @@ class LARefreshStateHeader: LARefreshHeader {
             return super.state
         }
         set {
-            let oldValue = super.state
-            if newValue == oldValue { return }
             super.state = newValue
             self.stateLabel.text = self.stateTitles[newValue]
         }
