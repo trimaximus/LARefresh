@@ -46,7 +46,6 @@ class LARefreshStateHeader: LARefreshHeader {
             if self.latestUpdateTimeLabel.isHidden {
                 return
             }
-            
         }
     }
     

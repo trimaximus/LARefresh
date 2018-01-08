@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        self.myTableView.la_header = LARefreshHeader(refreshTarget: self, refreshingAction: #selector(testRefresh))
+        self.myTableView.la_header = LARefreshNormalHeader(refreshTarget: self, refreshingAction: #selector(testRefresh))
         self.myTableView.la_footer = LARefreshBackFooter(refreshTarget: self, refreshingAction: #selector(testLoadMore))
     }
 

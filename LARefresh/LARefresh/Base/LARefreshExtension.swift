@@ -259,7 +259,7 @@ extension Bundle {
     /// - Returns: LARefresh资源文件所在bundle
     class func LARefreshResourceBundle() -> Bundle? {
         let refreshBundle = Bundle(for: LARefreshComponent.classForCoder())
-        guard let resourceBundlePath = refreshBundle.path(forResource: "LARefresh", ofType: "png") else { return nil }
+        guard let resourceBundlePath = refreshBundle.path(forResource: "LARefresh", ofType: "bundle") else { return nil }
         return Bundle(path: resourceBundlePath)
     }
 }
