@@ -231,6 +231,7 @@ fileprivate var LARefreshReloadDataClosureKey: Character = "\0"
 }
 
 extension UILabel {
+    /// 创建文字显示Label
     class func initializeLARefreshLabel() -> UILabel {
         let refreshLabel = UILabel()
         refreshLabel.font = LARefreshLabelFont
@@ -240,6 +241,15 @@ extension UILabel {
         refreshLabel.backgroundColor = UIColor.clear
         return refreshLabel
     }
+    
+    var la_text_width: CGFloat {
+        var textWidth: CGFloat = 0
+        if let currentText = self.text as NSString? {
+            textWidth = currentText.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: .usesFontLeading, attributes: [.font : self.font], context:nil).width
+        }
+        return textWidth
+    }
+    
 }
 
 extension Bundle {

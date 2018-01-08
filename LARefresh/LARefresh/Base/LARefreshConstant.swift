@@ -19,4 +19,9 @@ let LARefreshKeyPathGestureRecognizerState = "state"
 
 let LARefreshLabelFont = UIFont.boldSystemFont(ofSize: 14)
 let LARefreshLabelTextColor = UIColor(red: 90.0 / 255.0, green: 90.0 / 255.0, blue: 90.0 / 255.0, alpha: 1)
+let LARefreshLabelLeftInset: CGFloat = 25
+
+let LARefreshHeaderIdleText = "下拉可以刷新"
+let LARefreshHeaderPullingText = "松开立即刷新"
+let LARefreshHeaderRefreshingText = "正在刷新数据中..."
 
