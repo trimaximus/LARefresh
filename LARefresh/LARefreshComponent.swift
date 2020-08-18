@@ -28,8 +28,7 @@ public struct LARefreshKeyPath {
 
 public class LARefreshComponent: UIView {
     
-    weak var scrollView: UIScrollView?
-    var panGestureRecognizer: UIPanGestureRecognizer?
+    var scrollView: UIScrollView?
     var originInset = UIEdgeInsets.zero
     
     var automaticallyAdjustsAlpha = false
@@ -76,7 +75,8 @@ public class LARefreshComponent: UIView {
     
     func prepare() {
         self.autoresizingMask = .flexibleWidth
-        self.backgroundColor = .clear
+        self.backgroundColor = .lightGray
+        self.frame.size.height = self.height
     }
     
     func subviewsLayout() {}
@@ -112,28 +112,24 @@ public class LARefreshComponent: UIView {
     }
     
     
-       func contentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
-       func contentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
-       func panGestureRecognizerStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    func contentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    func contentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    func panGestureRecognizerStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
     
 }
 
 // MARK: KVO
 public extension LARefreshComponent {
-
+    
     func addObservers() {
         let options: NSKeyValueObservingOptions = [.old, .new]
-        self.superview?.addObserver(self, forKeyPath: LARefreshKeyPath.contentOffset, options: options, context: nil)
-        self.superview?.addObserver(self, forKeyPath: LARefreshKeyPath.contentSize, options: options, context: nil)
-        self.panGestureRecognizer = self.scrollView?.panGestureRecognizer
-        self.panGestureRecognizer?.addObserver(self, forKeyPath: LARefreshKeyPath.panGestureRecognizerState, options: options, context: nil)
+        self.scrollView?.addObserver(self, forKeyPath: LARefreshKeyPath.contentOffset, options: options, context: nil)
+        self.scrollView?.addObserver(self, forKeyPath: LARefreshKeyPath.contentSize, options: options, context: nil)
     }
     
     func removeObservers() {
         self.superview?.removeObserver(self, forKeyPath: LARefreshKeyPath.contentOffset)
         self.superview?.removeObserver(self, forKeyPath: LARefreshKeyPath.contentSize)
-        self.panGestureRecognizer?.removeObserver(self, forKeyPath: LARefreshKeyPath.panGestureRecognizerState)
-        self.panGestureRecognizer = nil
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -146,8 +142,6 @@ public extension LARefreshComponent {
         switch keyPath {
         case LARefreshKeyPath.contentOffset:
             self.contentOffsetDidChange(change)
-        case LARefreshKeyPath.panGestureRecognizerState:
-            self.panGestureRecognizerStateDidChange(change)
         default:
             break
         }
@@ -158,7 +152,7 @@ public extension LARefreshComponent {
 // MARK: Actions
 public extension LARefreshComponent {
     
-    func beginRefreshing(completionAction: LARefreshAction) {
+    func beginRefreshing() {
         UIView.animate(withDuration: 0.25) {
             self.alpha = 1
         }
@@ -171,7 +165,12 @@ public extension LARefreshComponent {
                 self.setNeedsDisplay()
             }
         }
-        self.refreshAction?()
+    }
+    
+    func endRefreshing() {
+        DispatchQueue.main.async {
+            self.state = .idle
+        }
     }
     
 }

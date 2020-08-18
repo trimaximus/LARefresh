@@ -15,9 +15,13 @@ public extension LA where Base: UIView {
     
     var header: LARefreshHeaderView? {
         get {
-            return objc_getAssociatedObject(self.base, &REFRESH_FOOTER_KEY) as? LARefreshHeaderView
+            return objc_getAssociatedObject(self.base, &REFRESH_HEADER_KEY) as? LARefreshHeaderView
         }
         set {
+            if let newHeader = newValue, !(self.header?.isEqual(newHeader) ?? false) {
+                self.header?.removeFromSuperview()
+                self.base.insertSubview(newHeader, at: 0)
+            }
             objc_setAssociatedObject(self.base, &REFRESH_HEADER_KEY, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
