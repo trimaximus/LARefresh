@@ -13,9 +13,9 @@ fileprivate var REFRESH_FOOTER_KEY = "LA_REFRESH_FOOTER"
 
 public extension LA where Base: UIView {
     
-    var header: LARefreshHeaderView? {
+    var header: LARefreshHeader? {
         get {
-            return objc_getAssociatedObject(self.base, &REFRESH_HEADER_KEY) as? LARefreshHeaderView
+            return objc_getAssociatedObject(self.base, &REFRESH_HEADER_KEY) as? LARefreshHeader
         }
         set {
             if let newHeader = newValue, !(self.header?.isEqual(newHeader) ?? false) {
@@ -26,13 +26,35 @@ public extension LA where Base: UIView {
         }
     }
     
-    var footer: LARefreshFooterView? {
+    var footer: LARefreshFooter? {
         get {
-            return objc_getAssociatedObject(self.base, &REFRESH_FOOTER_KEY) as? LARefreshFooterView
+            return objc_getAssociatedObject(self.base, &REFRESH_FOOTER_KEY) as? LARefreshFooter
         }
         set {
+            if let newFooter = newValue, !(self.footer?.isEqual(newFooter) ?? false) {
+                self.footer?.removeFromSuperview()
+                self.base.insertSubview(newFooter, at: 0)
+            }
             objc_setAssociatedObject(self.base, &REFRESH_FOOTER_KEY, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
+    }
+    
+}
+
+extension UIScrollView {
+    
+    var numberOfDatas: Int {
+        var count = 0
+        if let tableView = self as? UITableView {
+            for section in 0 ..< tableView.numberOfSections {
+                count += tableView.numberOfRows(inSection: section)
+            }
+        } else if let collectionView = self as? UICollectionView {
+            for section in 0 ..< collectionView.numberOfSections {
+                count += collectionView.numberOfItems(inSection: section)
+            }
+        }
+        return count
     }
     
 }

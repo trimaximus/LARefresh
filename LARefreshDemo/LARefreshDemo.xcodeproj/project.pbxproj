@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D050E5024EBC32F00F97810 /* LARefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D050E4F24EBC32F00F97810 /* LARefreshBackFooter.swift */; };
+		0D050E5224EBC34000F97810 /* LARefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D050E5124EBC34000F97810 /* LARefreshAutoFooter.swift */; };
 		0DF3332A24E65DDB00A8B40D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3332924E65DDB00A8B40D /* AppDelegate.swift */; };
 		0DF3332C24E65DDB00A8B40D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3332B24E65DDB00A8B40D /* SceneDelegate.swift */; };
 		0DF3332E24E65DDB00A8B40D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3332D24E65DDB00A8B40D /* MasterViewController.swift */; };
@@ -19,8 +21,8 @@
 		0DF3335F24E65F3900A8B40D /* LA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3335E24E65F3900A8B40D /* LA.swift */; };
 		0DF3336124E663D400A8B40D /* LARefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3336024E663D400A8B40D /* LARefreshComponent.swift */; };
 		0DF3336324E6664C00A8B40D /* LARefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3336224E6664C00A8B40D /* LARefresh.swift */; };
-		0DF3336524E666B300A8B40D /* LARefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3336424E666B300A8B40D /* LARefreshHeaderView.swift */; };
-		0DF3336724E668A400A8B40D /* LARefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3336624E668A400A8B40D /* LARefreshFooterView.swift */; };
+		0DF3336524E666B300A8B40D /* LARefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3336424E666B300A8B40D /* LARefreshHeader.swift */; };
+		0DF3336724E668A400A8B40D /* LARefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3336624E668A400A8B40D /* LARefreshFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D050E4F24EBC32F00F97810 /* LARefreshBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshBackFooter.swift; sourceTree = "<group>"; };
+		0D050E5124EBC34000F97810 /* LARefreshAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshAutoFooter.swift; sourceTree = "<group>"; };
 		0DF3332624E65DDB00A8B40D /* LARefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LARefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF3332924E65DDB00A8B40D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF3332B24E65DDB00A8B40D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,8 +63,8 @@
 		0DF3335E24E65F3900A8B40D /* LA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LA.swift; sourceTree = "<group>"; };
 		0DF3336024E663D400A8B40D /* LARefreshComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshComponent.swift; sourceTree = "<group>"; };
 		0DF3336224E6664C00A8B40D /* LARefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefresh.swift; sourceTree = "<group>"; };
-		0DF3336424E666B300A8B40D /* LARefreshHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshHeaderView.swift; sourceTree = "<group>"; };
-		0DF3336624E668A400A8B40D /* LARefreshFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshFooterView.swift; sourceTree = "<group>"; };
+		0DF3336424E666B300A8B40D /* LARefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshHeader.swift; sourceTree = "<group>"; };
+		0DF3336624E668A400A8B40D /* LARefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LARefreshFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +152,10 @@
 				0DF3335E24E65F3900A8B40D /* LA.swift */,
 				0DF3336224E6664C00A8B40D /* LARefresh.swift */,
 				0DF3336024E663D400A8B40D /* LARefreshComponent.swift */,
-				0DF3336424E666B300A8B40D /* LARefreshHeaderView.swift */,
-				0DF3336624E668A400A8B40D /* LARefreshFooterView.swift */,
+				0DF3336424E666B300A8B40D /* LARefreshHeader.swift */,
+				0DF3336624E668A400A8B40D /* LARefreshFooter.swift */,
+				0D050E4F24EBC32F00F97810 /* LARefreshBackFooter.swift */,
+				0D050E5124EBC34000F97810 /* LARefreshAutoFooter.swift */,
 			);
 			name = LARefresh;
 			path = ../LARefresh;
@@ -290,11 +296,13 @@
 				0DF3332C24E65DDB00A8B40D /* SceneDelegate.swift in Sources */,
 				0DF3336324E6664C00A8B40D /* LARefresh.swift in Sources */,
 				0DF3332E24E65DDB00A8B40D /* MasterViewController.swift in Sources */,
-				0DF3336524E666B300A8B40D /* LARefreshHeaderView.swift in Sources */,
+				0D050E5024EBC32F00F97810 /* LARefreshBackFooter.swift in Sources */,
+				0DF3336524E666B300A8B40D /* LARefreshHeader.swift in Sources */,
+				0D050E5224EBC34000F97810 /* LARefreshAutoFooter.swift in Sources */,
 				0DF3335F24E65F3900A8B40D /* LA.swift in Sources */,
 				0DF3336124E663D400A8B40D /* LARefreshComponent.swift in Sources */,
 				0DF3333024E65DDB00A8B40D /* DetailViewController.swift in Sources */,
-				0DF3336724E668A400A8B40D /* LARefreshFooterView.swift in Sources */,
+				0DF3336724E668A400A8B40D /* LARefreshFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

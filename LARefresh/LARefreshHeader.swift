@@ -1,5 +1,5 @@
 //
-//  LARefreshHeaderView.swift
+//  LARefreshHeader.swift
 //  LARefreshDemo
 //
 //  Created by trimaximus on 2020/8/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class LARefreshHeaderView: LARefreshComponent {
+public class LARefreshHeader: LARefreshComponent {
     
     override var state: LARefreshStatus {
         get {
@@ -29,15 +29,19 @@ public class LARefreshHeaderView: LARefreshComponent {
             }
         }
     }
-    
+
     var refreshTopDelta: CGFloat = 0
     
-    convenience init(_ refreshAction: LARefreshAction?) {
-        self.init(frame: .zero)
-        self.refreshAction = refreshAction
+    override var height: CGFloat {
+        get {
+            return super.height
+        }
+        set {
+            super.height = newValue
+            self.frame.origin.y = -newValue
+        }
     }
     
-    var observer: NSKeyValueObservation!
     override func prepare() {
         super.prepare()
         self.frame.origin.y = -self.frame.height
@@ -83,25 +87,25 @@ public class LARefreshHeaderView: LARefreshComponent {
     
     internal func headerBeginRefreshing() {
         guard let currentScrollView = self.scrollView, currentScrollView.panGestureRecognizer.state != .cancelled else { return }
-        UIView.animate(withDuration: 0.25, animations: {
-            let space = self.frame.height + self.originInset.top
-            var inset = currentScrollView.contentInset
-            inset.top = space
+        let space = self.frame.height + self.originInset.top
+        var inset = currentScrollView.contentInset
+        inset.top = space
+        UIView.animate(withDuration: LA_ANIMATION_DURATION, animations: {
             currentScrollView.contentInset = inset
             currentScrollView.contentOffset.y = -space
             debugPrint(currentScrollView.contentInset)
-        }, completion: { finished in
+        }, completion: { _ in
             self.refreshAction?()
         })
     }
     
     internal func headerEndRefreshing() {
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: LA_ANIMATION_DURATION, animations: {
             self.scrollView?.contentInset.top += self.refreshTopDelta
             if self.automaticallyAdjustsAlpha {
                 self.alpha = 0
             }
-        }, completion: { finished in
+        }, completion: { _ in
             self.pullingPercent = 0
         })
     }

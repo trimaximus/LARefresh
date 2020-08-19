@@ -55,7 +55,7 @@ public class LARefreshComponent: UIView {
     }
     
     var height: CGFloat = 54 {
-        willSet {
+        didSet {
             self.frame.size.height = self.height
         }
     }
@@ -71,6 +71,11 @@ public class LARefreshComponent: UIView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    convenience init(_ refreshAction: LARefreshAction?) {
+        self.init(frame: .zero)
+        self.refreshAction = refreshAction
     }
     
     func prepare() {
@@ -168,9 +173,7 @@ public extension LARefreshComponent {
     }
     
     func endRefreshing() {
-        DispatchQueue.main.async {
-            self.state = .idle
-        }
+        self.state = .idle
     }
     
 }

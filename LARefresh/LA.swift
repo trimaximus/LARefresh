@@ -8,6 +8,8 @@
 
 import UIKit
 
+internal let LA_ANIMATION_DURATION: TimeInterval = 0.25
+
 public protocol LAExtensionProvider: class {
     associatedtype CompatibleType
     var la: CompatibleType { get set }

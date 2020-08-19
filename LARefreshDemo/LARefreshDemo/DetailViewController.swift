@@ -21,9 +21,7 @@ class DetailViewController: UIViewController {
             }
         }
         
-        self.view.la.header = LARefreshHeaderView({
-            
-        })
+        
     }
 
     override func viewDidLoad() {
