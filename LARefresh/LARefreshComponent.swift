@@ -23,7 +23,21 @@ public struct LARefreshKeyPath {
     static let contentInset = "contentInset"
     static let contentOffset = "contentOffset"
     static let contentSize = "contentSize"
-    static let panGestureRecognizerState = "state"
+}
+
+public struct LAAnimation {
+    struct KeyPath {
+        static let bounds = "bounds"
+    }
+    
+    struct Key {
+        static let identifier = "identifier"
+    }
+    
+    struct Value {
+        static let headerRefreshingBounds = "headerRefreshingBounds"
+        static let footerRefreshingBounds = "footerRefreshingBounds"
+    }
 }
 
 public class LARefreshComponent: UIView {

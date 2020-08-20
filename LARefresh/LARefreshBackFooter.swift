@@ -34,9 +34,9 @@ class LARefreshBackFooter: LARefreshFooter {
 
     override func contentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.contentOffsetDidChange(change)
-        debugPrint(self.scrollView?.contentSize)
         if self.state == .refreshing { return }
         guard let currentScrollView = self.scrollView, let offsetY = (change?[.newKey] as? NSValue)?.cgPointValue.y else { return }
+        debugPrint(currentScrollView.bounds)
         self.originInset = currentScrollView.contentInset
         let threshold = self.originY - currentScrollView.frame.height
         if offsetY < threshold { return }
@@ -67,11 +67,29 @@ class LARefreshBackFooter: LARefreshFooter {
         guard let currentScrollView = self.scrollView else { return }
         self.latestDataCount = currentScrollView.numberOfDatas
         let space = self.frame.height + self.originInset.bottom
-        UIView.animate(withDuration: LA_ANIMATION_DURATION, animations: {
-            
-        }, completion: { finished in
-            self.refreshAction?()
-        })
+        let fromBounds = currentScrollView.bounds
+        var toBounds = currentScrollView.bounds
+        toBounds.origin.y = space
+        let boundsAnimation = CABasicAnimation(keyPath: LAAnimation.KeyPath.bounds)
+        boundsAnimation.isRemovedOnCompletion = false
+        boundsAnimation.fillMode = .both
+        boundsAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        boundsAnimation.duration = 0.25
+        boundsAnimation.fromValue = NSValue(cgRect: fromBounds)
+        boundsAnimation.toValue = NSValue(cgRect: toBounds)
+        boundsAnimation.setValue(LAAnimation.Value.footerRefreshingBounds, forKey: LAAnimation.Key.identifier)
+        boundsAnimation.delegate = self
+        currentScrollView.layer.add(boundsAnimation, forKey: LAAnimation.Value.footerRefreshingBounds)
     }
 
+}
+
+extension LARefreshBackFooter: CAAnimationDelegate {
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        guard let identifier = anim.value(forKey: LAAnimation.Key.identifier) as? String else { return }
+        if identifier == LAAnimation.Value.footerRefreshingBounds {
+            
+        }
+    }
 }
